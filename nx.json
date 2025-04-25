@@ -12,7 +12,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "680bc8f85580906c2fee80ce",
+  "nxCloudId": "680bcbc19c76d63ce41eb3f5",
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
       "cache": true,
@@ -28,27 +28,12 @@
         "{workspaceRoot}/eslint.config.mjs"
       ]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
-    "e2e-ci--**/**": {
-      "dependsOn": ["^build"]
-    }
+    "@nx/vite:test": { "cache": true, "inputs": ["default", "^production"] },
+    "e2e-ci--**/**": { "dependsOn": ["^build"] }
   },
   "plugins": [
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
   ],
   "generators": {
     "@nx/angular:application": {
